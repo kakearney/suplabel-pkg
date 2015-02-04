@@ -133,8 +133,8 @@ yy = (bottom+top)/2;
 
 % plotflag = 0;
 % if plotflag
-%     ref1 = xyrefline([left right], [top bottom]);
-%     ref2 = xyrefline([tx xx yx], [xy yy ty]);
+%     ref1 = gridxy([left right], [top bottom]);
+%     ref2 = gridxy([tx xx yx], [xy yy ty]);
 %     set(ref1, 'color', 'b');
 %     set(ref2, 'color', 'r');
 % end
