@@ -46,16 +46,18 @@ function varargout = suplabel(varargin)
 % Parse inputs
 %-----------------------------
 
-Param.figure = gcf;
-Param.axes = [];
-Param.title = '';
-Param.xlabel = '';
-Param.ylabel = '';
-Param.buffert = .02;
-Param.bufferx = .05;
-Param.buffery = .05;
+p = inputParser;
+p.addParameter('figure', gcf);
+p.addParameter('axes', []);
+p.addParameter('title', '');
+p.addParameter('xlabel', '');
+p.addParameter('ylabel', '');
+p.addParameter('buffert', .02);
+p.addParameter('bufferx', .05);
+p.addParameter('buffery', .05);
+p.parse(varargin{:});
 
-Param = parsepv(Param, varargin);
+Param = p.Results;
 
 if isempty(Param.axes)
     Param.axes = findobj('Parent', Param.figure, 'Type', 'axes', ...
